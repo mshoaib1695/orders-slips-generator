@@ -1,0 +1,46 @@
+{
+  "name": "ml-orders-slips",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "An app to preview and generate order slips from Excel files",
+  "author": "Your Name",
+  "license": "ISC",
+  "scripts": {
+    "start": "electron .",
+    "build": "rmdir /s /q dist && electron-builder"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5",
+    "bwip-js": "^4.7.0",
+    "dotenv": "^17.0.1",
+    "pdf-lib": "^1.17.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.medluck.orderslips",
+    "productName": "ML Order Slips",
+    "files": [
+      "**/*",
+      ".env",
+      "preload.js",
+      "styles.css",
+      "assets/**"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

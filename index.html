@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order Slip Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+  .table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 1rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  .preview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+  }
+
+  .preview-table thead {
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .preview-table th,
+  .preview-table td {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .preview-table tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+
+  .preview-table tr:hover {
+    background-color: #eef6ff;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <h1>📦 Order Slip Generator</h1>
+    <button id="selectBtn">📁 Select Excel File</button>
+    <p id="selectedFile"></p>
+    <div id="previewContainer" class="hidden">
+      <h2>📋 Preview Orders</h2>
+      <div id="tableWrapper"></div>
+      <button id="generateBtn">✅ Generate PDFs</button>
+    </div>
+    <p id="status"></p>
+  </div>
+
+<script src="renderer.js"></script>
+
+</body>
+</html>
